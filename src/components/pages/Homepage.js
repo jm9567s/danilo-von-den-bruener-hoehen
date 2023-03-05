@@ -4,10 +4,13 @@ import Header from '../Header'
 import Introduction from '../Introduction';
 import Gallery from '../Gallery';
 import Links from '../Links';
+import Navbar from '../Navbar';
+import Lightbox from '../Lightbox';
 
 function Homepage() {
   return (
     <>
+      <Navbar/>
       <Header/>
       <Introduction/>
       <Content/>

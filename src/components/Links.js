@@ -29,7 +29,7 @@ function Links() {
                                 <Link to="https://www.bsv2010.de/">
                                     <img src="/Images/bsv-logo-large.png" width="250" height="250" alt='bsv' />
                                 </Link>
-                                <div className='group-hover:opacity-70 opacity-0 absolute inset-0 z-10 flex justify-center items-center pointer-events-none'>
+                                <div className='group-hover:opacity-70 opacity-0 absolute inset-0 z-5 flex justify-center items-center pointer-events-none'>
                                     <p className='w-full h-full font-bold rounded-md bg-black group relative flex justify-center items-center text-orange-400 tablet:text-base'>Hier klicken</p>
                                 </div>
                             </div>

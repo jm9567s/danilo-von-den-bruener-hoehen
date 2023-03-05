@@ -50,7 +50,7 @@ function Gallery() {
     const [clickedImage, setClickedImage] = useState(null);
 
     const handleClick = (image, idx) => {
-        setClickedImage(image.src)
+        setClickedImage(image.src);
         console.log(image.src + " got clicked!");
     }
     
@@ -64,13 +64,10 @@ return (
                         src={image.src}
                         alt={image.alt}
                         clickedImage={image.src}
-                        className='h-full w-full object-cover object-center'
-                        style={{ maxHeight: '400px' }}
+                        className='h-full w-full object-cover object-center hover:drop-shadow-sm'
+                        style={{ maxHeight: '600px' }}
                     />
-                    <div onClick = {() => handleClick(image, idx)} className='absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300'>
-                        <button className='bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'>
-                            View
-                        </button>
+                    <div onClick = {() => handleClick(image, idx)} className='absolute inset-0 flex items-center justify-center opacity-0 hover:bg-opacity-75 transition-opacity duration-300 cursor-pointer'>
                     </div>
                 </div>
             ))}

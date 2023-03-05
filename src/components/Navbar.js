@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Lightbox from './Lightbox';
 
-function Navbar() {
+function Navbar({ navbarIsVisible }) {
 
   const [isTransparent, setTransparency] = useState(false);
 
@@ -29,7 +30,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className={`bg-gray-800 bg-opacity-10 text-slate-500 w-full duration-200 fixed top-0 ${isTransparent ? 'bg-opacity-10 text-white ' : 'bg-opacity-80 text-white'} tablet:h-full tablet:w-2/4 tablet:ease-in-out`}>
+      <nav className={`bg-gray-800 bg-opacity-10 text-slate-500 w-full duration-200 fixed z-10 top-0 ${isTransparent ? 'bg-opacity-10 text-white ' : 'bg-opacity-80 text-white'} ${navbarIsVisible ? 'hidden' : ''}  tablet:h-full tablet:w-2/4 tablet:ease-in-out`}>
         <div className=" flex items-center justify-center tablet:bg-gray-700 tablet:w-full tablet:h-full ">
           <ul className="
           nav-menu
