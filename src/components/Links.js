@@ -13,7 +13,7 @@ function Links() {
                     </header>
                 </div>
                 <div className=''>
-                    <ul className='flex flex-row justify-center items-center pt-10 space-x-20 text-3xl tablet:space-x-0 tablet:space-y-20 tablet:flex-col tablet:space-y4 tablet:justify-center tablet:items-center'>
+                    <ul className='flex flex-row justify-center items-center pt-10 pb-20 space-x-20 text-3xl tablet:space-x-0 tablet:space-y-20 tablet:flex-col tablet:space-y4 tablet:justify-center tablet:items-center'>
                         <li>
                             <div className='group relative'>
                                 <Link to="https://www.snautz.de/a/hund/danilo-von-den-bruener-hoehen-277602494">

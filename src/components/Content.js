@@ -11,14 +11,14 @@ function Content() {
             <section id='über-mich' className='flex flex-col justify-center items-center bg-[#282727] bg-opacity-90 
                 pt-20'>
                 <div className=''>
-                    <header>
+                    <header className='pb-5'>
                         <h1>
-                            <span className='text-5xl font-dancing-font bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-white'>Über mich</span>
+                            <span className='text-6xl font-dancing-font bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-white'>Über mich</span>
                         </h1>
                     </header>
                 </div>
-                <div className='w-1/4 text-center tablet:w-3/4'>
-                    <span className='font-bold text-gray-300'>
+                <div className='w-2/4 text-center laptop:w-2/4 tablet:w-3/4'>
+                    <span className='font-bold text-gray-300 text-2xl font-tilt-neon'>
                         Unser Rüde wuchs in der Kupferstadt Stolberg auf mit dem wunderschönen Wahrzeichen der
                         Stolberger Burg , dem Tor zur Nordeifel.
 
@@ -43,31 +43,33 @@ function Content() {
                         Seit November 2022 kann er sich als nationaler Champion ausweisen.
                     </span>
                     <div className='pt-10'>
-                        <img className='rounded-xl shadow-white shadow-xl' src='Images/DSC_9112.JPG' alt='Banner' />
+                        <img className='w-3/5 mx-auto rounded-xl shadow-white shadow-xl tablet:w-full' src='Images/DSC_9112.JPG' alt='Banner' />
                     </div>
-                    <div className='pt-10'>
-                        <p className='pb-5 text-center text-5xl font-dancing-font bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-white'>Meine Lebensgefährtin</p>
-                        <img className='rounded-xl shadow-white shadow-xl' src='Images/DSC_9025.JPG' alt='Zita' />
+                    <div className='pt-10 tablet:w-fit'>
+                        <p className='pb-5 text-center text-6xl font-dancing-font bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-white tablet:text-4xl'>Meine Lebensgefährtin</p>
+                        <img className='w-3/5 mx-auto rounded-xl shadow-white shadow-xl tablet:w-full' src='Images/DSC_9025.JPG' alt='Zita' />
                     </div>
-                    <div className='pt-10'>
+                    <div className='pt-10 text-gray-300 font-bold'>
+                        <p className='text-2xl'>
                         Meine Eltern
-                        <ul>
+                        </p>
+                        <ul className=''>
                             <li>
-                                <Text>
+                                <Text style={{ fontSize: '1.25rem', lineHeight: '1.5rem',fontWeight: 'bold', color: "#D1D5DB" }}>
                                     Pablo vom Hollandhof {`\n`}
                                     E1 N/N, E2 N/N, ED 0/0, HD A
                                 </Text>
                             </li>
                             <li>
-                                <Text>
+                                <Text style={{ fontSize: '1.25rem', lineHeight: '1.5rem',fontWeight: 'bold', color: "#D1D5DB" }}>
                                     Kendy vom Feldbachtal {`\n`}
                                     HD A1, ED 0/0, OCD frei, E1 N/DM, e2 N/N, WH 65
                                 </Text>
                             </li>
                         </ul>
                     </div>
-                    <div className=''>
-                        <p className='text-center'>
+                    <div className='text-gray-300 pt-10 font-bold text-2xl'>
+                        <p className='text-center pb-5 text-4xl font-dancing-font bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-white'>
                             Über uns
                         </p>
                         Unsere Hunde sind Familienmitglieder leben mit in unserem Haus mit Garten.
@@ -85,16 +87,16 @@ function Content() {
                     </div>
                 </div>
             </section>
-            <section id='Bedeckung' className=' flex flex-col justify-center items-center bg-[#282727] bg-opacity-90 
+            <section id='Bedeckung' className=' flex flex-col justify-center items-center  bg-[#282727] bg-opacity-90 
                 pt-20'>
-                <div className=' pt-20 text-5xl font-bold'>
-                    <header>
+                <div className=' pt-20 text-6xl font-bold'>
+                    <header className='pb-5'>
                         <h1>
                             <span className='font-dancing-font bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-white'>Bedeckung</span>
                         </h1>
                     </header>
                 </div>
-                <div className='w-1/4 flex flex-col justify-center items-center tablet:w-3/4'>
+                <div className='w-1/2 font-tilt-neon flex flex-col justify-center items-center text-gray-300 font-bold text-2xl laptop:w-1/2 tablet:w-3/4'>
                     <p className='indent-8 text-center'>
 
                         Wir würden uns über zuchtinteressierte Besitzer von Hündinnen freuen, welche mit Ihrer gesunden Hündin,
@@ -105,7 +107,7 @@ function Content() {
                         Deckanfragen sollten bitte nicht kurzfristig erfolgen.
                     </p>
                 </div>
-                <div className='w-1/2 pt-20 tablet:w-3/4 pb-20'>
+                <div className='w-1/2 pt-20 laptop:w-1/2 tablet:w-3/4 pb-20'>
                     <img className='' src='/Images/Stammbaum.jpg' alt="Stammbaum" />
                 </div>
             </section>

@@ -8,9 +8,11 @@ module.exports = {
     extend: {
       screens: {
         'tablet': {'max': '640px'},
+        'laptop': {'min': '1024px'},
       },
       fontFamily: {
         'dancing-font': ['"Dancing Script"'],
+        'tilt-neon': ['"Tilt Neon"'],
       }
     },
   },

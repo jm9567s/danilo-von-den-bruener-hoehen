@@ -1,96 +1,134 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import Lightbox from './Lightbox';
 
-function Navbar({ navbarIsVisible }) {
+const hrefList = [
+  { section: "Start", href: "#Start" },
+  { section: "Über-mich", href: "#Über-mich" },
+  { section: "Galerie", href: "#Galerie" },
+  { section: "Bedeckung", href: "#Bedeckung" },
+  { section: "Links", href: "#Links" },
+  { section: "Kontakt", href: "#Kontakt" },
+]
+
+function Navbar() {
 
   const [isTransparent, setTransparency] = useState(false);
 
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const closeMenu = () => setMenuOpen(false);
+  const [isMenuOpen, setMenuOpen] = useState(null);
+
+  const isTablet = useMediaQuery({ maxWidth: 640 });
+  const [isSticky, setSticky] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
+
+  const handleMenu = () => {
+    if(isTablet) {
+      setMenuOpen(!isMenuOpen);
+    } else {
+      setMenuOpen(false);
+    }
+  }
 
   useEffect(() => {
 
-  
-      
-      const changeNavbarOpacity = () => {
+    console.log("Status isTablet: " + isTablet + "\n Status isMenuOpen: " + isMenuOpen);
 
-        console.log(window.scrollY);
-        if(window.scrollY <= 1210) {
-          setTransparency(true);
-        } else {
-          setTransparency(false);
-        }
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setSticky(true);
+      } else {
+        setSticky(false);
       }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+    const changeNavbarOpacity = () => {
+
+      console.log(window.scrollY);
+      /*if (window.scrollY <= 1210) {
+        setTransparency(true);
+      } else {
+        setTransparency(false);
+      }*/
+    }
 
     window.addEventListener('scroll', changeNavbarOpacity);
-    return() => window.removeEventListener('scroll', changeNavbarOpacity);
-    
+    return () => window.removeEventListener('scroll', changeNavbarOpacity);
+
+    /*
+    <nav className={`fixed bg-black bg-opacity-40 w-full transition duration-200 z-10 tablet:h-fit tablet:ease-in-out`}>
+        <div className={`absolute top-5 right-5 cursor-pointer text-white opacity-0 ${isTablet && "opacity-100"} invisible tablet:visible`} onClick={() => setMenuOpen(!isMenuOpen)}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d={isMenuOpen ? "M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" : "M6 18L18 6M6 6l12 12"} />
+          </svg>
+        </div>
+        <div className="">
+          <ul className={`"object-fill justify-center space-x-8 flex flex-row h-20 uppercase font-bold text-lg tablet:h-fit tablet:flex-col tablet:items-center tablet:space-x-0 tablet:space-y-4`}>
+            {hrefList.map((link, idx) => (
+              <li key={idx} className={`text-white hover:scale-105 transition duration-200 flex items-center h-full`}>
+                <a href={link.href} className='' onClick={closeMenu}>
+                  {link.section}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </nav>
+    */
 
   }, [])
 
   return (
     <>
-      <nav className={`bg-gray-800 bg-opacity-10 text-slate-500 w-full duration-200 fixed z-10 top-0 ${isTransparent ? 'bg-opacity-10 text-white ' : 'bg-opacity-80 text-white'} ${navbarIsVisible ? 'hidden' : ''}  tablet:h-full tablet:w-2/4 tablet:ease-in-out`}>
-        <div className=" flex items-center justify-center tablet:bg-gray-700 tablet:w-full tablet:h-full ">
-          <ul className="
-          nav-menu
-          object-fill
-          justify-center 
-          space-x-8 
-          flex 
-          flex-row
-          h-20
-          uppercase
-          font-bold
-          text-lg
-          tablet:flex-col
-          tablet:items-center
-          tablet:space-x-0
-          tablet:space-y-4
-          tablet:h-full
-          ">
-            <li className="nav-item hover:text-slate-50 hover:scale-105 duration-200">
-              <a href='#Start' className='start flex items-center h-full' onClick={closeMenu}>
-                <span>
-                Start
-                </span>
-              </a>
-            </li>
-            <li className="nav-item hover:text-slate-50 hover:scale-105 duration-200">
-              <a href='#Über-mich' className='über-mich flex items-center h-full' onClick={closeMenu}>
-                <span>
-                  Über mich
-                </span>
-              </a>
-            </li>
-            <li className="nav-item hover:text-slate-50 hover:scale-105 duration-200">
-              <a href='#Galerie' className='bedeckung flex items-center h-full' onClick={closeMenu}>
-                <span>
-                  Galerie
-                </span>
-              </a>
-            </li>
-            <li className="nav-item hover:text-slate-50 hover:scale-105 duration-200">
-              <a href='#Bedeckung' className='bedeckung flex items-center h-full' onClick={closeMenu}>
-                <span>
-                  Bedeckung
-                </span>
-              </a>
-            </li>
-            <li className="nav-item hover:text-slate-50 hover:scale-105 duration-200">
-              <a href='#Links' className='links flex items-center h-full' onClick={closeMenu}>
-                <span>
-                  Links
-                </span>
-              </a>
-            </li>
-            <li className="nav-item hover:text-slate-50 hover:scale-105 duration-200">
-              <a href='#Links' className='links flex items-center h-full' onClick={closeMenu}>
-                <span>
-                  Kontakt
-                </span>
-              </a>
-            </li>
+      <nav className={`fixed top-0 bg-black ${isMenuOpen && isTablet ? "h-[100%] bg-opacity-80 transition ease-out duration-500" : "tablet:h-[3.65rem] h-fit"} bg-opacity-50 w-full z-10`}>
+        <div className={`hidden tablet:flex`}>
+          <button
+            className={`flex absolute ${isMenuOpen && isTablet ? "right-10 top-10" : "right-0"} px-3 py-3 text-white `}
+            onClick={handleMenu}
+          >
+            {isMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-8 h-8"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-8 h-8"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+              </svg>
+            )}
+          </button>
+        </div>
+        <div className={`${isMenuOpen && isTablet ? "pt-20" : "tablet:hidden"}`}>
+          <ul className={`"object-fill justify-center space-x-8 flex flex-row uppercase font-bold text-lg h-20 tablet:h-fit tablet:flex-col tablet:items-center tablet:space-x-0 tablet:space-y-10`}>
+            {hrefList.map((link, idx) => (
+              <li key={idx} className={` text-white hover:scale-105 transition duration-200 flex items-center h-full`}>
+                <a href={link.href} className='' onClick={closeMenu}>
+                  {link.section}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>

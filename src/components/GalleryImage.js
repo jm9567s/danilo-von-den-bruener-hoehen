@@ -1,10 +1,10 @@
 import React from 'react'
 
-function GalleryImage({ src, alt, width }) {
+function GalleryImage({ src, alt }) {
   return (
     <>
         <div className='flex items-center justify-center'>
-            <img src={src} alt={alt} width={width}/>
+            <img src={src} alt={alt}/>
         </div>
     </>
   )

@@ -6,16 +6,17 @@ import Gallery from '../Gallery';
 import Links from '../Links';
 import Navbar from '../Navbar';
 import Lightbox from '../Lightbox';
+import Contact from '../Contact';
 
 function Homepage() {
   return (
     <>
-      <Navbar/>
       <Header/>
       <Introduction/>
       <Content/>
       <Gallery/>
       <Links/>
+      <Contact/>
     </>
   );
 }

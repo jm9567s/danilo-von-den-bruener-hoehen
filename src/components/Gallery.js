@@ -19,7 +19,6 @@ const imageList = [
     {
         src: "Images/bildvonwhatsapp.jpg",
         alt: "bild4",
-        width: 810,
     },
     {
         src: "Images/DSC_8862.JPG",
@@ -28,7 +27,6 @@ const imageList = [
     {
         src: "Images/DSC_9041.JPG",
         alt: "bild6",
-        width: 800,
     },
     {
         src: "Images/DSC_9112.JPG",

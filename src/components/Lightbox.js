@@ -37,7 +37,7 @@ function Lightbox({ clickedImage, setClickedImage}) {
       <img
         src={clickedImage}
         alt={clickedImage.alt}
-        className='tablet:max-w-md'
+        className='tablet:max-w-md tablet:px-5'
         style={{ position: 'absolute', margin: 'auto', maxHeight: '90vh' }}
       />
     </div>
