@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <div className="container">
-        <BrowserRouter basename='/'>
+        <BrowserRouter basename='/danilo'>
           <Navbar />
           <Routes>
-            <Route path='/' element={<Homepage />} />
+            <Route path='/danilo' element={<Homepage />} />
           </Routes>
         </BrowserRouter>
       </div>
