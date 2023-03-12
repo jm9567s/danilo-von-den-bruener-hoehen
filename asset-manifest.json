@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.6889deb7.css",
-    "main.js": "/static/js/main.87c07ddf.js",
-    "static/js/787.4898e4b5.chunk.js": "/static/js/787.4898e4b5.chunk.js",
-    "index.html": "/index.html",
-    "main.6889deb7.css.map": "/static/css/main.6889deb7.css.map",
-    "main.87c07ddf.js.map": "/static/js/main.87c07ddf.js.map",
-    "787.4898e4b5.chunk.js.map": "/static/js/787.4898e4b5.chunk.js.map"
+    "main.css": "/danilo-von-den-bruener-hoehen/static/css/main.6889deb7.css",
+    "main.js": "/danilo-von-den-bruener-hoehen/static/js/main.c9c2e8dd.js",
+    "static/js/787.4898e4b5.chunk.js": "/danilo-von-den-bruener-hoehen/static/js/787.4898e4b5.chunk.js",
+    "index.html": "/danilo-von-den-bruener-hoehen/index.html",
+    "main.6889deb7.css.map": "/danilo-von-den-bruener-hoehen/static/css/main.6889deb7.css.map",
+    "main.c9c2e8dd.js.map": "/danilo-von-den-bruener-hoehen/static/js/main.c9c2e8dd.js.map",
+    "787.4898e4b5.chunk.js.map": "/danilo-von-den-bruener-hoehen/static/js/787.4898e4b5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6889deb7.css",
-    "static/js/main.87c07ddf.js"
+    "static/js/main.c9c2e8dd.js"
   ]
 }
